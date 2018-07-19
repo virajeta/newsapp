@@ -11,8 +11,8 @@
     "postinstall": "ng build --aot -prod"
   },
   "engines": {
-    "node": "^6.1.0",
-    "npm": "^8.11.1"
+    "npm": "^6.1.0",
+    "node": "^8.11.1"
   },
   "private": true,
   "dependencies": {
