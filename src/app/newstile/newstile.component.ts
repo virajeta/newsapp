@@ -19,19 +19,21 @@ export class NewstileComponent implements OnInit {
   onDataRecieved(oData){
     this.pageSizes = new  Array(Math.ceil(oData.articles.length/this.CONFIG.articlesInSinglePage));
   	this.newsArticles = this.newsArticles.concat(oData.articles);
-
-                  setTimeout( _ => $(".newsList").turn({
+    var oThat = this;
+    setTimeout( _ => {
+                      $(".newsList").turn({
                         display: "double",
                         autoCenter:true,
                         options:{
                           gradients: true,
                           elevation:2,
                           turnCorners: 'tl,tr'
-                        }
+                        },
                         //height: 400,
                        // width: 600,
                         pages: this.newsArticles.length
-                      }, 100); 
+                      });
+                  }, 100);
 
   }
  
