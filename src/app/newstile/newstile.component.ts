@@ -14,26 +14,27 @@ export class NewstileComponent implements OnInit {
   CONFIG = Config;
   constructor(private newsService: NewsserviceService,private httpService:HttpClient) { }
   newsArticles: Observable<GoogleNewsTemplate>[] = [];
+  pageSizes: Array<undefined>;
   //abc: Array<Object>[];
   onDataRecieved(oData){
+    this.pageSizes = new  Array(Math.ceil(oData.articles.length/this.CONFIG.articlesInSinglePage));
   	this.newsArticles = this.newsArticles.concat(oData.articles);
 
-  	//this.abc = oData.articles;
-  	//console.log(this.abc);
-  }
-     ngAfterViewInit(){
-       setTimeout(_ => {
-          // if($(".newsList").length)
-          $(".newsList").turn({
-          display: "double",
-          autoCenter:true,
-          //height: 400,
-         // width: 600,
-          pages: this.newsArticles.length
-        }, 100);        
-       })
+                  setTimeout( _ => $(".newsList").turn({
+                        display: "double",
+                        autoCenter:true,
+                        options:{
+                          gradients: true,
+                          elevation:2,
+                          turnCorners: 'tl,tr'
+                        }
+                        //height: 400,
+                       // width: 600,
+                        pages: this.newsArticles.length
+                      }, 100); 
 
   }
+ 
   askData(){
     let url = this.CONFIG.url;
     let options = {
@@ -47,7 +48,7 @@ export class NewstileComponent implements OnInit {
     this.newsService.getData(url, options).subscribe(this.onDataRecieved.bind(this)); 
   }
   ngOnInit() {
-
+    $('.newsList').height(window.innerHeight*0.85);
     this.askData();
   }
 
