@@ -4,6 +4,8 @@ import {Config} from '../Configuration';
 import {GoogleNewsTemplate} from '../GoogleNewsTemplate';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as $ from 'jquery';
+import  "turn.js";
 
 @Component({
   selector: 'app-newstile',
@@ -21,7 +23,7 @@ export class NewstileComponent implements OnInit {
   	this.newsArticles = this.newsArticles.concat(oData.articles);
     var oThat = this;
     setTimeout( _ => {
-                      $(".newsList").turn({
+                      <any>$(".newsList").turn({
                         display: "double",
                         autoCenter:true,
                         options:{

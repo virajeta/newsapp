@@ -20,12 +20,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+			  "src/assets/jquery-3.3.1.min.js",
+			  "src/assets/turn.html4.js"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+				"./node_modules/jquery/dist/jquery.js"
+			]
           },
           "configurations": {
             "production": {
