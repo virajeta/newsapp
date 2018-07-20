@@ -4,8 +4,10 @@ import {Config} from '../Configuration';
 import {GoogleNewsTemplate} from '../GoogleNewsTemplate';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 import  "turn.js";
+
+declare var $: any;
 
 @Component({
   selector: 'app-newstile',
