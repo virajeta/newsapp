@@ -1,5 +1,6 @@
 // server.js
-const express = require('express');
+
+const express = require('node_modules/express/lib/express.js');
 const app = express();
 // Run the app by serving the static files
 // in the dist directory
