@@ -1,4 +1,4 @@
-// server.js
+// server.js file
 const express = require('express');
 const app = express();
 // Run the app by serving the static files
