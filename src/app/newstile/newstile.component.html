@@ -1,7 +1,8 @@
 <div class="newsList">
 	<div class="front_page hard">The News App</div>
 	<div *ngFor = "let a of pageSizes; let i = index;" class="page">
-		<div *ngFor= "let newsarticle of newsArticles | slice: (i*CONFIG.articlesInSinglePage):(i+1)*CONFIG.articlesInSinglePage" class="newsarticle">
+		
+		<div *ngFor= "let newsarticle of newsArticles | slice: (i*CONFIG.articlesInSinglePage):(i+1)*CONFIG.articlesInSinglePage" class="newsarticle">{{newsarticle.category}}
 		<div *ngIf = "newsArticles.length" class="newstile">
 			<div class="image_section">
 				<div class="image-tile">

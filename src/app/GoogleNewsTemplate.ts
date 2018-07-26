@@ -6,4 +6,5 @@ export class GoogleNewsTemplate{
   urlToImage: string;
   publishedAt: string;
   author: string;
+  category: string;
 }

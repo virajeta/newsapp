@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { AppComponent } from './app.component';
 import { NewstileComponent } from './newstile/newstile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
