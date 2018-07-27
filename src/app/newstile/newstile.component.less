@@ -2,27 +2,34 @@
 div{
 	//border:solid 1px;
 	display: block;
-	padding: 0.25em;
+	padding: 0.25vw 0;
 }
 .front_page{
 	text-align:center;
 	padding-top:40%;
-	font-size: 4em;
+	font-size: 4vw;
 	font-style: italics;
 	background-color: lightgray !important;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
 	opacity: 1;
 	border:solid 1px;
+	//background-image: none !important;
 }
 .page{
 	background-color: white;
 	opacity: 1;
-	border:solid 1px;
+	//border:solid 1px;
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-.page.odd{
-	//background-image: "url('assets/bg.png')";
+.odd{
+	background-image: url('/assets/bg.png');
+	padding-right:3vw;
 }
+.even{
+	background-image: url('/assets/bg-left.png');
+	padding-left:3vw;
+	}
 .newsList{
   //height: ~"@{winheight}px";
   min-height: 100%;
@@ -30,25 +37,41 @@ div{
   //border:solid red;
   //overflow: hidden;
 }
+.newscategory{
+	background: black;
+	color:white;
+}
 .newstile{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 90%;
-	margin: auto auto 3em auto;
+	margin: auto auto 3vw auto;
+	.title{
+
+		font-size: 2vw;
+		font-weight:bold;
+		padding: 0 0.5vw;
+	}
+	.newstilebody{
+		display: flex;
+		flex-direction: row;
+	}
 	.image_section{
 		flex: 1;
 		.image-tile{
 			max-height: 100%;
 			max-width: 100%;
 			margin: auto;
-			height: 10em;
-			width: 10em;
+			height: 10vw;
+			width: 10vw;
+			display:flex;
 			img{
 				max-height: 100%;
 				max-width: 100%;
 				margin: auto;
-				height: 100%;
-				width: 100%;
+				height: 5vw;
+				width: 5vw;
+				display:table-cell;
 				border-radius: 5%;
 				filter: grayscale(100%);
 			}
@@ -59,11 +82,7 @@ div{
 	.content{
 		flex: 3;
 		display:flex;
-		flex-direction: column;
-		.title{
-			flex:1;
-		    font-size: xx-large;
-		}
+		flex-direction: row;
 		.description{
 		    flex: 3;
 		    //text-align: center;
@@ -78,5 +97,32 @@ div{
 }
 
 @media only screen and (max-width: 480px) {
-	
+    .front_page{
+      
+    }
+	.odd,.even,.page{
+		background-image: url('/assets/single.jpg');
+		background-repeat: no-repeat;
+		background-size: auto;
+
+
+
+		.newsarticle {
+		    /* border: solid; */
+		    width: 88%;
+		    float: right;
+		    .title, .description{
+		    	font-size: 4vw;
+		    }
+           
+           .image_section{
+           		padding-top: 4vw;
+			    img{
+			    	height: 100% !important;
+			    	width: 100% !important;
+			    }
+		    }
+		}
+
+	}
 }

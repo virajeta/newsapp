@@ -2,19 +2,22 @@
 	<div class="front_page hard">The News App</div>
 	<div *ngFor = "let a of pageSizes; let i = index;" class="page">
 		
-		<div *ngFor= "let newsarticle of newsArticles | slice: (i*CONFIG.articlesInSinglePage):(i+1)*CONFIG.articlesInSinglePage" class="newsarticle">{{newsarticle.category}}
+		<div *ngFor= "let newsarticle of newsArticles | slice: (i*CONFIG.articlesInSinglePage):(i+1)*CONFIG.articlesInSinglePage" class="newsarticle">
+		<span class="newscategory">{{newsarticle.category}}</span>
 		<div *ngIf = "newsArticles.length" class="newstile">
-			<div class="image_section">
-				<div class="image-tile">
-					<img src="{{newsarticle.urlToImage}}">
-				</div>
-				<div class="source-time">{{newsarticle.source.name}} | {{newsarticle.publishedAt}}</div>
-			</div>
-			<div class="content">
-				<div class="title">{{newsarticle.title}}</div>
-				<div class="description">"{{newsarticle.description}}"</div>
-				<div class="viewmore"></div>
-			</div>
+			<div class="title">{{newsarticle.title}}</div>
+			<div class="newstilebody">
+					<div class="image_section">
+						<div class="image-tile">
+							<img src="{{newsarticle.urlToImage}}">
+						</div>
+						<div class="source-time">{{newsarticle.source.name}} | {{newsarticle.publishedAt}}</div>
+					</div>
+					<div class="content">
+						<div class="description">"{{newsarticle.description}}"</div>
+						<div class="viewmore"></div>
+					</div>
+		    </div>
 		</div> 
 		</div>
 	</div>

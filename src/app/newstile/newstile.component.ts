@@ -67,7 +67,7 @@ export class NewstileComponent implements OnInit {
 
   }
   ngOnInit() {
-    $('.newsList').height(window.innerHeight*0.85);
+    //$('.newsList').height(window.innerHeight*0.9);
     this.deviceInfo = this.deviceService.getDeviceInfo();
     this.askData();
   }
